@@ -1,41 +1,19 @@
-input {
+input{
   border: solid 1px black;
 }
 
-.container {
-
+span, .container>* {
+  margin: 5px;
 }
 
-.info-container {
-
+#lpcontainer {
+  display: flex;
+  flex-direction: column;
 }
 
-.item {
-
-}
-
-.row {
-
-}
-
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+.container, #lpcontainer div {
+  display: flex;
+  flex-direction: row;
 }
 
 .btn {
@@ -66,12 +44,15 @@ input {
     border-color: #4cae4c;
 }
 
+.btn-create {
+  color: #000;
+  background-color:grey;
+  border-color: grey;
+}
+
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
-}
