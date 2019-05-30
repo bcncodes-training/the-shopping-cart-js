@@ -1,25 +1,21 @@
+/*Elimina fila*/
 function deleteItem(e){
     selectedRow = e.currentTarget.parentNode.parentNode;
     nodoPadre = selectedRow.parentNode;
     nodoPadre.removeChild(selectedRow);
 }
-
+/*Calcula el precio total por producto*/
 function getPriceByProduct(itemNode){
 return    (parseInt(itemNode.getElementsByClassName('item-price')[0].innerHTML)*(parseInt(itemNode.querySelector('#qty').value)||1))
 }
 
+/*Actualiza el valor del precio total por producto*/
 function updatePriceByProduct(productPrice, index){
     let totalItem = document.getElementsByClassName('total-item')[index];
     totalItem.innerHTML=productPrice +'€';
 }
 
-/* Recupera el precio unitario del producto
-    1. buscar el item padre
-    2. Recupero el item que tiene precio 
-Recupera la cantidad de ítems deseados
-Calcula el precio total según los datos anteriores
-Actualiza el precio toal del DOM */
-
+/*Calcula el precio total por cada uno de los productos del carrito. Actualiza el precio total del carrito.*/
 function getTotalPrice() {
     let items = document.getElementsByClassName('row');
     let total=0;
@@ -31,7 +27,7 @@ function getTotalPrice() {
     document.querySelector('h2>span').innerHTML=total+' €'
 }
 
-
+/*Función de creación del elemento botón delete*/
 function createDeleteButton(){
     let element = document.createElement('div');
     element.className='col';
@@ -47,6 +43,7 @@ function createDeleteButton(){
 
 }
 
+/*Función de creación del elemento quantity*/
 function createQuantityNode(){
     let element = document.createElement('div');
     element.className = 'col';
@@ -66,6 +63,7 @@ function createQuantityNode(){
 
 }
 
+/*Función de creación de elementos tipo div. Recibe por parámetros el tipo de datos que representa y el valor*/
 function createItemNode(dataType, itemData="0€"){
 
     let element = document.createElement('div');
@@ -83,6 +81,7 @@ function createItemNode(dataType, itemData="0€"){
 
 }
 
+/*Crea una fila nueva*/
 function createNewItemRow(itemName, itemUnitPrice){
     itemRow = document.createElement('div');
     itemRow.className = 'row';
@@ -96,19 +95,27 @@ function createNewItemRow(itemName, itemUnitPrice){
     return itemRow;
 }
 
-function createNewItem(e){
+/*Inserta la fila creada por encima de la última fila*/
+function createNewItem(){
+  let itemsList = document.querySelector('.container');
+  let itemRowsLength = itemsList.getElementsByClassName('row').length;
+  let lastItemRow = itemsList.getElementsByClassName('row')[itemRowsLength-1];
 
+  let itemName = document.getElementById('item-name-create').value;
+  let itemUnitPrice = document.getElementById('item-price-create').value;
+  let itemRow = createNewItemRow(itemName, itemUnitPrice);
 
-
-
-
-
+  itemsList.insertBefore(itemRow, lastItemRow);
 
 }
 
+/*Carga de la página. Realiza la asociación de los eventos de botón a las funciones 'Listeners' de los mismos.*/
 addEventListener('DOMContentLoaded', ()=>{
     let btnCalculatePrice = document.querySelector('.btn-success');
+    let btnCreateRow = document.querySelector('.btn-create');
     btnCalculatePrice.addEventListener('click',getTotalPrice);
+    btnCreateRow.addEventListener('click', createNewItem);
+    
     let rows = document.getElementsByClassName('row');
         for(let i=0;i<rows.length;i++){
             rows[i].querySelector('.btn-delete')
