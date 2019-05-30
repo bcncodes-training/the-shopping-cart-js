@@ -1,6 +1,7 @@
 input {
     border: solid 1px black;
     width:25%;
+    &#item-name-create{width:75%}
   }
   
   .container {
@@ -10,17 +11,23 @@ input {
   }
   
    
-  .row {
+  .row,.row-create {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  &-create{
+      justify-content: center;
+  }
   }
 
   .col{
       padding: 5px;
       width: 15%;
       text-align: right;
+      &-create{
+        width: 25%;
+      }
   }
 
   .total-item{
