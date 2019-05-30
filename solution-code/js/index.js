@@ -1,5 +1,7 @@
 function deleteItem(e){
-
+    selectedRow = e.currentTarget.parentNode.parentNode;
+    nodoPadre = selectedRow.parentNode;
+    nodoPadre.removeChild(selectedRow);
 }
 
 function getPriceByProduct(itemNode){
@@ -29,31 +31,87 @@ function getTotalPrice() {
     document.querySelector('h2>span').innerHTML=total+' €'
 }
 
-function createQuantityInput(){
-
-}
 
 function createDeleteButton(){
+    let element = document.createElement('div');
+    element.className='col';
+    let buttonNode = document.createElement('button');
+
+    buttonNode.className ='btn btn-delete';
+    buttonNode.innerHTML ='Delete';
+    buttonNode.addEventListener('click',deleteItem);
+
+    element.appendChild(buttonNode);
+
+    return element;
 
 }
 
 function createQuantityNode(){
+    let element = document.createElement('div');
+    element.className = 'col';
+
+    label = document.createElement('label');
+    label.for = 'qty';
+    label.innerHTML = 'qty';
+
+    let inputNode = document.createElement('input');
+    inputNode.name = 'quantity';
+    inputNode.value=0;
+
+    element.appendChild(label);
+    element.appendChild(inputNode);
+
+    return element;
 
 }
 
-function createItemNode(dataType, itemData){
+function createItemNode(dataType, itemData="0€"){
+
+    let element = document.createElement('div');
+    let span = document.createElement('span');
+    let textnode = document.createTextNode(itemData);
+
+    span.appendChild(textnode);
+    element.appendChild(span);
+
+    element.className="item-"+dataType+ " col";
+
+    return element;
+    
+
 
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
+    itemRow = document.createElement('div');
+    itemRow.className = 'row';
+
+    itemRow.appendChild(createItemNode('name', itemName));
+    itemRow.appendChild(createItemNode('price', itemUnitPrice));
+    itemRow.appendChild(createQuantityNode());
+    itemRow.appendChild(createItemNode('total'));
+    itemRow.appendChild(createDeleteButton());
+
+    return itemRow;
+}
+
+function createNewItem(e){
+
+
+
+
+
+
 
 }
 
-function createNewItem(){
-
-}
-
-addEventListener('load', ()=>{
+addEventListener('DOMContentLoaded', ()=>{
     let btnCalculatePrice = document.querySelector('.btn-success');
     btnCalculatePrice.addEventListener('click',getTotalPrice);
+    let rows = document.getElementsByClassName('row');
+        for(let i=0;i<rows.length;i++){
+            rows[i].querySelector('.btn-delete')
+                        .addEventListener('click',deleteItem);
+        }
 });
