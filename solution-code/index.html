@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <!-- Un div con un span, mostrando el nombre del producto
+Un div con un span, mostrando el coste de una unidad
+Un div con un label y un input, donde el usuario indicará cuantas unidades comprará
+Un div con un span, mostrando el precio total de todos los ítems. Este será el resultado de calcular el número de ítems multiplicado por el precio de un producto. El valor por defecto del precio total es 0
+Un div con un botón delete, para eliminar un producto de la lista -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col"><span class="item-name">Gorra</span></div>
+                <div class="col"><span class="item-price">5</span></div>
+                <div class="col"><label for="qty"></label><input type="text" name="quantity" id="qty"></div>
+                <div class="col"><span class="total-item"></span></div>
+                <div class="col"><button class="btn btn-delete">delete</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><span class="item-name">Cinturón</span></div>
+                <div class="col"><span class="item-price">10</span></div>
+                <div class="col"><label for="qty"></label><input type="text" name="quantity" id="qty"></div>
+                <div class="col"><span class="total-item"></span></div>
+                <div class="col"><button class="btn btn-delete">delete</button></div>
+            </div>
+            <button class="btn btn-success">Calculate prices</button>
+            <h2>Total Price: <span>0€</span></h2>
+        </div>
+    
+</body>
+</html>
