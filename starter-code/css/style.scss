@@ -1,3 +1,7 @@
+html,body{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif
+}
 input {
   border: solid 1px black;
 }
@@ -71,7 +75,72 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
 }
-
+.btn-addNew{    color: #fff;
+  background-color: #6492c7;
+  border-color: #4c69ae;}
 .quantity {
   margin: 0 5px;
+}
+
+#addedProducte{display: flex;flex-direction: column;
+  .nouProd{display: flex;
+    >*{
+      margin: 10px;
+      }
+    }
+}
+#stockList,.buyListContent,.stockContent{
+  display: flex;
+  flex-direction: column;
+  >*{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3px;
+    >* {
+      width: 100%;
+      padding: 5px;
+      flex-grow: 1;
+    }
+    .demandButton,.nouQuantitat,.deleteButton{max-width: 90px;}
+  }
+}
+.add,.delete{float: right;}
+.addNewProduct{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  .addProduct{min-width: 90px;
+  }  
+}
+.hidden{display: none;}
+.hiddenAlt{opacity: 0.4;}
+.warning{
+  padding: 5px;
+  color: floralwhite;
+  background-color: #f009;
+  border-radius: 3px;
+}
+.alert{
+  padding: 5px;
+  color: floralwhite;
+  background-color: rgba(255, 153, 0, 0.753);
+  border-radius: 3px;
+}
+.buyProducts{
+  .buyProduct{
+    .qtyBuy,.buyButton{
+      width: 100%;
+      padding: 5px;
+      flex-grow: 1;
+      max-width: 90px;
+    }
+  }
+}
+.stockList{
+  display: flex;
+  flex-direction: column;
+  .control{
+    max-width: 90px;
+  }
 }

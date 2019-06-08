@@ -1,0 +1,175 @@
+html, body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  border: solid 1px black;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-delete {
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
+}
+
+.btn-addNew {
+  color: #fff;
+  background-color: #6492c7;
+  border-color: #4c69ae;
+}
+
+.quantity {
+  margin: 0 5px;
+}
+
+#addedProducte {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#addedProducte .nouProd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#addedProducte .nouProd > * {
+  margin: 10px;
+}
+
+#stockList, .buyListContent, .stockContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#stockList > *, .buyListContent > *, .stockContent > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 3px;
+}
+
+#stockList > * > *, .buyListContent > * > *, .stockContent > * > * {
+  width: 100%;
+  padding: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#stockList > * .demandButton, #stockList > * .nouQuantitat, #stockList > * .deleteButton, .buyListContent > * .demandButton, .buyListContent > * .nouQuantitat, .buyListContent > * .deleteButton, .stockContent > * .demandButton, .stockContent > * .nouQuantitat, .stockContent > * .deleteButton {
+  max-width: 90px;
+}
+
+.add, .delete {
+  float: right;
+}
+
+.addNewProduct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.addNewProduct .addProduct {
+  min-width: 90px;
+}
+
+.hidden {
+  display: none;
+}
+
+.hiddenAlt {
+  opacity: 0.4;
+}
+
+.warning {
+  padding: 5px;
+  color: floralwhite;
+  background-color: #f009;
+  border-radius: 3px;
+}
+
+.alert {
+  padding: 5px;
+  color: floralwhite;
+  background-color: rgba(255, 153, 0, 0.753);
+  border-radius: 3px;
+}
+
+.buyProducts .buyProduct .qtyBuy, .buyProducts .buyProduct .buyButton {
+  width: 100%;
+  padding: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 90px;
+}
+
+.stockList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.stockList .control {
+  max-width: 90px;
+}
+/*# sourceMappingURL=style.css.map */

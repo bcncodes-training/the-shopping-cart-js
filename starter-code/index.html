@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Shopping cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
 </head>
+
 <body>
+    <div id="stockList"></div>
+    <div class="addNewProduct hidden">
+        <label for="nouProducte">Nou Producte</label>
+        <input class="nouProd" id="nouProducte" type="text">
+        <label for="nouCategory">Categoria</label>
+        <input class="nouCat" id="nouCategory" type="text">
+        <div class="addProduct btn btn-success">Add</div>
+    </div>
+    <div class="order btn btn-success">Ordenar</div>
+    <div class="delete btn btn-delete">X</div>
+    <div class="add btn btn-addNew">+</div>
+    <section class="demandSection">
+        <div class="demandList"></div>
+    </section>
+    <section class="buySection">
+        <div class="buyProducts">
+            <div class="buy btn btn-addNew">Comprar</div>
+        </div>
+    </section>
+    <section class="stockControl">
+        <div class="stockList">
+            <div class="control btn btn-success">Stock Control</div>
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
