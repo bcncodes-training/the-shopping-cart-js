@@ -2,18 +2,43 @@ input{
   border: solid 1px black;
 }
 
+.cabecera > :nth-child(1), .cabecera > :nth-child(2) {
+  width: 20%;
+}
+
+.cabecera > :nth-child(3), .cabecera > :nth-child(7) {
+  width: 15%;
+}
+.cabecera > :nth-child(4), .cabecera > :nth-child(5), .cabecera > :nth-child(6) {
+  width: 10%;
+}
+
+.linea > :nth-child(1), .linea > :nth-child(2) {
+  width: 18%;
+}
+
+.linea > :nth-child(3), .linea > :nth-child(7) {
+  width: 12%;
+}
+.linea > :nth-child(4), .linea > :nth-child(5), .linea > :nth-child(6) {
+  width: 8%;
+}
+
+.cabecera>* {
+  font-weight: bold;
+}
+
 span, .container>*, .linea>*, .cabecera>* {
-  width: 100%;
   margin: 5px;
 }
 
-#lpcontainer, .lpcontainer {
+#lpcontainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.container, #lpcontainer div, .linea, .cabecera {
+.container, .linea, .cabecera {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -72,6 +97,12 @@ span, .container>*, .linea>*, .cabecera>* {
   color: #fff;
   background-color: rgb(53, 52, 3);
   border-color: rgb(53, 52, 3);
+}
+
+.btn-order {
+  color: #fff;
+  background-color: goldenrod;
+  border-color: goldenrod;
 }
 
 .btn-inactivo {
