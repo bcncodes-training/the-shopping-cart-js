@@ -119,12 +119,16 @@ function printTabla(){
     //declaracion de creacion elementos html
     let tdh1 = document.createElement('td');
     let tdh2 = document.createElement('td');
+    let tdh3 = document.createElement('td');
+
 //pintado de los elemntos HTML
     tdh1.innerHTML ='Concepto';
     tdh2.innerHTML = 'Cuantia';
+    tdh3.innerHTML = 'Borrar';
     //declaramos que introducir en la cabecera
     trheader.appendChild(tdh1);
     trheader.appendChild(tdh2);
+    trheader.appendChild(tdh3);//boton eliminar
     //todo dentro de la tabla
     tabla.appendChild(trheader);
 
@@ -139,12 +143,22 @@ function printTabla(){
         let tr          = document.createElement('tr');
         let tdnombre    = document.createElement('td');
         let tdprecio    = document.createElement('td');
+        let tdborrar    = document.createElement('td');
+
+        let botonBorrar = document.createElement('button');
+        botonBorrar.innerHTML = 'Borrar';//dentrpo boton
+        botonBorrar.addEventListener('click', function(){
+            eliminarElemento(prod.id);
+        });
+        tdborrar.appendChild(botonBorrar);
         // lo que tienen que pintar
         tdnombre.innerHTML = prod.nombre;//declaracion del prod en for
         tdprecio.innerHTML = prod.precio.toFixed(2);
+    
         //donde?
         tr.appendChild(tdnombre);
         tr.appendChild(tdprecio);
+        tr.appendChild(tdborrar);
         tabla.appendChild(tr);
         //iva , formula sacada de StackFlow
         let iva     = parseFloat(prod.iva / 100.0) *prod.precio;
@@ -179,6 +193,17 @@ function printTabla(){
     tabla.appendChild(triva);
     tabla.appendChild(trtotal);
 
+}
+function eliminarElemento(id){
+    for(let i = 0; i < productosAnhadidos.length; i++){
+        if(parseInt(productosAnhadidos[i].id) == id){
+            //tabla.deleteRow(i+1);
+            productosAnhadidos.splice(i, 1);//realizar ejercicios!
+            printTabla();//volvemos a pintar los elementos e la tabla
+            return; //return vacio sale del metodo
+            //al salir no volveremos a usarlo!Mirar libreta
+        }
+    }
 }
 
 function init(){
