@@ -24,6 +24,7 @@ Comentamos mi recogida de los inputs por que vamos a ponerlas al final del docum
 
 let button1 =   null;
 let button2 =   null;
+let btnanyadir = null;
 let lista   =   null;
 let tabla   =   null;
 
@@ -65,6 +66,7 @@ let baseDeDatos = [
 let productosAnhadidos = [];
 
 function anyadirProducto (){
+lista.innerHTML = " ";
 lista.options[0] = new Option("--selecciona---");
 lista.options[0].value = 0;// indice de datos seleccionados
 
@@ -205,15 +207,43 @@ function eliminarElemento(id){
         }
     }
 }
+function anyadirProductoBBDD(){
+
+    let id       = document.getElementById('txtid').value;//nos coge el valor 
+    let nombre   = document.getElementById('txtnombre').value;//nos coge el valor 
+    let precio   = document.getElementById('txtprecio').value;//nos coge el valor 
+    let iva      = document.getElementById('txtiva').value;//nos coge el valor 
+    let total    = precio +parseFloat((precio* iva)/100);
+    baseDeDatos.push({id:id, nombre:nombre, precio:precio, iva:iva, total:total});
+    anyadirProducto();
+}
 
 function init(){
     button1 = document.getElementById("boton1");
     button2 = document.getElementById("boton2");
+    btnanyadir = document.getElementById("btnanyadir");
     lista = document.getElementById("productos");
     tabla = document.querySelector('table:nth-child(1)');
     button1.addEventListener('click', anhadirProducto);
+    btnanyadir.addEventListener('click', anyadirProductoBBDD);
+    try{
+        baseDeDatos = JSON.parse(localStorage.getItem('bbdd'));
+       if( baseDeDatos == null)
+       baseDeDatos = [];
+    }catch(exc){
+        
+        console.log(exc);
+    }
     anyadirProducto();
     
 
 }
+function destroy(){
+    try{
+        localStorage.setItem('bbdd', JSON.stringify(baseDeDatos));
+    }catch(exc){
+
+    }
+}
 window.addEventListener( 'load', init);
+window.addEventListener( 'unload', destroy);
