@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,6 +13,8 @@
         <div class="izquierda">
             <div class="campos">
                 <form action="">
+                    <label for="file-input" >Cargar Factura...</label>
+                    <input type="file" id="file-input"  name="file-input"/>
                     <input type="text" id="txtid"       placeholder="id..."     name="txtid">
                     <input type="text" id="txtnombre"   placeholder="nombre..." name="txtnombre">
                     <input type="text" id="txtprecio"   placeholder="precio..." name="txtprecio">
@@ -28,8 +31,9 @@
                 
             </div>
             <div class="botones">
-                <button type="submit" id="boton1">Añadir Producto</button>
-                <button type="submit" id="boton2">Emitir factura</button>
+                <button type="submit" id="boton1" class="btn-text-primary">Añadir Producto</button>
+                <button type="submit" id="boton2" class="btn-text-primary">Emitir factura</button>
+                <button type="submit" id="boton3" class="btn-text-primary">Descargar factura</button>
             </div>
         </div>
         <div class="derecha">
@@ -58,6 +62,7 @@
             </table>
         </div>
     </div>
-    <script src="functions.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
