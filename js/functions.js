@@ -25,6 +25,7 @@ Comentamos mi recogida de los inputs por que vamos a ponerlas al final del docum
 let button1 =   null;
 let button2 =   null;
 let button3 =   null;
+let boton3  =   null;
 let btnanyadir = null;
 let lista   =   null;
 let tabla   =   null;
@@ -63,6 +64,8 @@ let baseDeDatos = [
     }
 
 ];
+let papelera = [];
+
 
 let productosAnhadidos = [];
 
