@@ -33,7 +33,7 @@ let tabla   =   null;
 
 //creacion array base datos
 
-let baseDeDatos = [
+const baseDeDatos = [
     {
         id: 1,
         nombre: 'Zapatos',
