@@ -70,7 +70,7 @@ let papelera = [];
 let productosAnhadidos = [];
 
 function anyadirProducto (){
-lista.innerHTML = " ";
+lista.innerHTML = "";
 lista.options[0] = new Option("--selecciona---");
 lista.options[0].value = 0;// indice de datos seleccionados
 
